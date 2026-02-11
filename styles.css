@@ -160,9 +160,11 @@ nav a:hover{
     text-decoration: none;
     display: inline-block;
 }
+
 .points {
     padding: 5px 10px 10px 12px;
 }
+
 .gap {
     padding-bottom: 5px;
 }
