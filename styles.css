@@ -3,35 +3,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+    --base-color: white;
+    --text-color1: #000;
+    --text-color2: #666;
+    --text-color3: #EBEBEB ;
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --btn-hover-color: #333;
+    --surface-color: #ffffff;
+    --theme-color: #E6E6E6;
+}
+.dark-mode {
+    --base-color: #1a1a1a;
+    --text-color1: #E1E1E1;
+    /* --text-color1: white; */
+    --text-color2: #b0b0b0;
+    --text-color3: #333;
+    --btn-hover-color: #ccc;
+    --shadow-color: rgba(255, 255, 255, 0.10);
+    --surface-color: #000;
+}
+#theme-switch{
+    border: none;
+    outline: none;
+    height: 45px;
+    width: 45px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: var(--text-color3); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50px;
+    right: 20px;
+} 
+
+#theme-switch svg:last-child{
+    display: none;
+}
+
+.dark-mode #theme-switch svg:first-child{
+    display: none;
+}
+
+.dark-mode #theme-switch svg:last-child{
+    display: block;
+}
+
+#theme-switch svg:first-child{
+    fill: #2D2D2D;
+    /* background-color: var(--theme-color); */
+}
 
 html {
     scroll-behavior: smooth;
 }
 
 .tinybox, .points li{
-    color: #666;
+    color: var(--text-color2);
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    background: white;
-    color: #000;
+    background: var(--base-color);
+    color: var(--text-color1);
 }
 
 nav a {
-    color: white;
+    color: var(--base-color);
     text-decoration: none;
     margin: 0 15px; 
 }
 
 nav a:hover{
-    color: lightgrey;
+    color: var(--text-color3);
 }
 
 .header{
     position: sticky;
     top: 0;
-    background-color: #000;
+    background-color: var(--text-color1);
     padding: 10px;
 }
 
@@ -48,7 +100,7 @@ nav a:hover{
     font-size: 4rem;
     font-weight: 900;
     margin-bottom: 20px;
-    color: #000;
+    color: var(--text-color1);
 }
 
 .hero-content p {
@@ -60,8 +112,8 @@ nav a:hover{
 }
 
 .btn {
-    background: #000;
-    color: white;
+    background: var(--text-color1);
+    color: var(--base-color);
     padding: 15px 30px;
     border: none;
     border-radius: 10px;
@@ -73,7 +125,7 @@ nav a:hover{
 }
 
 .btn:hover, .btn-handles:hover {
-    background: #333;
+    background: var(--btn-hover-color);
 }
 
 @media (max-width: 768px) {
@@ -92,21 +144,24 @@ nav a:hover{
     margin: 20px auto;
     width: 1000px;
     /*border: 1.5px solid black;*/
-    box-shadow: 0 2px 8px lightgray;
+    box-shadow: 0 2px 8px var(--shadow-color);
 }
 .contactbox{
     border-radius: 10px;
     padding: 10px;
     margin: 0px 0px 65px auto;
     width: 200px;
-    box-shadow: 0 2px 8px lightgray;
+    box-shadow: 0 2px 8px var(--shadow-color);
     padding: 20px;
     text-align: center;
 }
-
+.box, .tinybox, .contactbox {
+    background: var(--surface-color);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
 .exp p, .intro p{
     font-size: 1rem;
-    color: #666;
+    color: var(--text-color2);
 }
 
 .subhead{
@@ -127,7 +182,7 @@ nav a:hover{
 
 .tinybox h3 {
     margin: 0 0 5px 0; 
-    color: #000;    
+    color: var(--text-color1);    
 }
 
 .tinybox ol,.tinybox ul {
@@ -148,8 +203,8 @@ nav a:hover{
 }
 
 .btn-handles {
-    background: #000;
-    color: white;
+    background: var(--text-color1);
+    color: var(--base-color);
     padding: 7.5px 15px;
     margin-top: 7.5px;
     border: none;
